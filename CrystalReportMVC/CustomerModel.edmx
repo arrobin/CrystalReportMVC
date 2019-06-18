@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CustomerDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="CustomerDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Customers">
           <Key>
             <PropertyRef Name="CustomerID" />
@@ -12,15 +12,14 @@
           <Property Name="CustomerID" Type="int" Nullable="false" />
           <Property Name="CustomerName" Type="varchar" MaxLength="50" />
           <Property Name="CustomerEmail" Type="varchar" MaxLength="50" />
-          <Property Name="CustomerZipCode" Type="int" />
+          <Property Name="CustomerZipCode" Type="varchar" MaxLength="50" />
           <Property Name="CustomerCountry" Type="varchar" MaxLength="50" />
           <Property Name="CustomerCity" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="CustomerDBModelStoreContainer">
           <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CustomerDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -31,7 +30,7 @@
           <Property Name="CustomerID" Type="Int32" Nullable="false" />
           <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CustomerEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CustomerZipCode" Type="Int32" />
+          <Property Name="CustomerZipCode" Type="String" />
           <Property Name="CustomerCountry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CustomerCity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>

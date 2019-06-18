@@ -1,0 +1,58 @@
+﻿@model IEnumerable<CrystalReportMVC.Customer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+    <div><a href="@Url.Action("ExportCustomers")"> Report PDF </a></div>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerZipCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerCountry)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerCity)
+        </th>
+        @*<th></th>*@
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerZipCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerCountry)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerCity)
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CustomerID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CustomerID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CustomerID })
+        </td>*@
+    </tr>
+}
+
+</table>

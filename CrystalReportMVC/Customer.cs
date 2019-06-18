@@ -17,7 +17,7 @@ namespace CrystalReportMVC
         public int CustomerID { get; set; }
         public string CustomerName { get; set; }
         public string CustomerEmail { get; set; }
-        public Nullable<int> CustomerZipCode { get; set; }
+        public string CustomerZipCode { get; set; }
         public string CustomerCountry { get; set; }
         public string CustomerCity { get; set; }
     }
